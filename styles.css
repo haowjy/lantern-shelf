@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+  --paper: #f5f7f5;
+  --ink: #20312e;
+  --muted: #566a65;
+  --line: #cdd8d3;
+  --accent: #28665c;
+  --accent-dark: #174c45;
+  --wash: #e7efeb;
+  --measure: 42rem;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 1rem/1.72 Georgia, "Times New Roman", serif;
+  text-wrap: pretty;
+}
+a { color: var(--accent-dark); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+a:hover { color: var(--accent); }
+.site-header, .site-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(100% - 2.5rem, 70rem);
+  margin-inline: auto;
+  color: var(--muted);
+  font: 0.88rem/1.4 system-ui, sans-serif;
+}
+.site-header { padding-block: 1.25rem; border-bottom: 1px solid var(--line); }
+.site-footer { padding-block: 2.5rem 1.5rem; border-top: 1px solid var(--line); }
+.wordmark, .site-footer a { color: var(--ink); font-weight: 700; letter-spacing: .01em; text-decoration: none; }
+.header-note { text-align: right; }
+main { width: min(100% - 2.5rem, var(--measure)); min-height: 70vh; margin: 0 auto; padding: 2.8rem 0 4rem; }
+h1, h2 { line-height: 1.12; text-wrap: balance; }
+h1 { margin: .2rem 0 1rem; font-size: clamp(2.3rem, 9vw, 4rem); letter-spacing: -.035em; font-weight: 500; }
+h2 { margin: 0; font-size: 1.55rem; font-weight: 500; }
+p { margin: 0 0 1.1rem; }
+.eyebrow { margin: 0 0 .8rem; color: var(--accent-dark); font: 700 .72rem/1.4 system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.home-intro { padding: 1.5rem 0 2.7rem; }
+.home-intro > p:not(.eyebrow) { max-width: 34rem; color: var(--muted); font-size: 1.12rem; }
+.text-link { display: inline-block; margin-top: .35rem; font: 700 .98rem/1.5 system-ui, sans-serif; }
+.shelf-note { border-top: 1px solid var(--line); padding-top: 1.4rem; color: var(--muted); }
+.shelf-note .eyebrow { margin-bottom: .35rem; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem; color: var(--muted); font: .78rem/1.5 system-ui, sans-serif; }
+.breadcrumbs a { color: var(--muted); }
+.story-intro { padding-bottom: 1.5rem; }
+.byline { margin-top: -.35rem; color: var(--muted); font: 1rem/1.5 system-ui, sans-serif; }
+.blurb { max-width: 38rem; margin-top: 1.5rem; font-size: 1.1rem; }
+.chapter-index { margin-top: 1.9rem; border-top: 1px solid var(--line); }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1rem 0 .45rem; }
+.section-heading span, time { color: var(--muted); font: .82rem/1.4 system-ui, sans-serif; }
+.chapter-index ol { list-style: none; margin: 0; padding: 0; }
+.chapter-index li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: .65rem; padding: .72rem 0; border-bottom: 1px solid var(--line); }
+.chapter-index li a { font-size: 1.02rem; text-decoration: none; }
+.chapter-index li a:hover { text-decoration: underline; }
+.chapter-number { color: var(--accent-dark); font: 700 .92rem/1.5 system-ui, sans-serif; }
+.feed-note { margin-top: 1.5rem; font: .88rem/1.5 system-ui, sans-serif; }
+.chapter-heading { margin-bottom: 2rem; }
+.chapter-heading .eyebrow { display: flex; gap: .5rem; align-items: baseline; }
+.chapter-heading h1 { max-width: 13ch; }
+.chapter-body { font-size: 1.11rem; line-height: 1.82; }
+.chapter-body p { margin: 0 0 1.35em; }
+.chapter-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .85rem 1.25rem; margin-top: 2.8rem; padding-top: 1rem; border-top: 1px solid var(--line); font: 700 .88rem/1.5 system-ui, sans-serif; }
+.chapter-nav a { text-decoration: none; }
+.back-link { margin-right: auto; }
+@media (min-width: 48rem) {
+  main { padding-top: 4.25rem; }
+  .home-intro { padding-top: 2.3rem; }
+  .chapter-index li { gap: 2rem; }
+}
+@media (max-width: 24rem) {
+  .site-header, .site-footer { width: min(100% - 1.5rem, 70rem); }
+  main { width: min(100% - 1.5rem, var(--measure)); }
+  .chapter-index li { grid-template-columns: 1fr; gap: .15rem; }
+}
